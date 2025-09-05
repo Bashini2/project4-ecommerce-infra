@@ -11,3 +11,9 @@ module "network" {
   az_public           = "ap-south-1a"
   az_private          = "ap-south-1b"
 }
+
+module "security" {
+  source = "../../modules/security"
+  vpc_id = module.network.vpc_id
+}
+
