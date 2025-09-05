@@ -1,0 +1,22 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# AWS keys
+*.pem
+*.key
+
+# Node / React
+node_modules/
+build/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# Docker
+*.log
+
