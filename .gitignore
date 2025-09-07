@@ -2,11 +2,13 @@
 .terraform/
 *.tfstate
 *.tfstate.*
-.terraform.lock.hcl
+terraform.tfstate.backup
+*.tfvars
 
 # AWS keys
 *.pem
 *.key
+.env
 
 # Node / React
 node_modules/
@@ -19,4 +21,5 @@ __pycache__/
 
 # Docker
 *.log
+
 
