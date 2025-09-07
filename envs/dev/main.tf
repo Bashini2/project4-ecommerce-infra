@@ -16,4 +16,13 @@ module "security" {
   source = "../../modules/security"
   vpc_id = module.network.vpc_id
 }
+module "compute" {
+  source            = "../../modules/compute"
+  project           = "project4"
+  public_subnet_id  = module.network.public_subnet_id
+  private_subnet_id = module.network.private_subnet_id
+  frontend_sg_id    = module.security.frontend_sg_id
+  backend_sg_id     = module.security.backend_sg_id
+  key_name          = "project4-key"
+}
 
