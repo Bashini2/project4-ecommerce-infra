@@ -74,3 +74,24 @@ resource "aws_route_table_association" "private_assoc" {
   subnet_id      = aws_subnet.private.id
   route_table_id = aws_route_table.private.id
 }
+# Extra Public Subnet
+resource "aws_subnet" "public2" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.3.0/24"
+  availability_zone = "ap-south-1b"
+
+  tags = {
+    Name = "project4-public-2"
+  }
+}
+
+# Extra Private Subnet
+resource "aws_subnet" "private2" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.4.0/24"
+  availability_zone = "ap-south-1c"
+
+  tags = {
+    Name = "project4-private-2"
+  }
+}

@@ -25,4 +25,16 @@ module "compute" {
   backend_sg_id     = module.security.backend_sg_id
   key_name          = "project4-key"
 }
+module "autoscaling" {
+  source = "../../modules/autoscaling"
+
+  vpc_id           = module.network.vpc_id
+  public_subnets   = module.network.public_subnets  
+  private_subnets  = module.network.private_subnets  
+
+  frontend_sg_id   = module.security.frontend_sg_id
+  backend_sg_id    = module.security.backend_sg_id
+
+  key_name = "project4-key"
+}
 
